@@ -11,3 +11,4 @@ while overlay.window:
   overlay.draw("fillRect", vector=Vector(30, 30, 60, 60), color=(255, 0, 255))
   overlay.handle()
 ```
+All uses and figures can be found in the script.
