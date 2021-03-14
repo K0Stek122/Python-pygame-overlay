@@ -122,22 +122,9 @@ overlay = Overlay(targetWindow)
 
 font = overlay.CreateFont("Fixedsys", 15)
 
-xOffset = 0
-yOffset = 0
-
 while overlay.window:
 	overlay.draw("fillRect", vector=Vector(30, 30, 60, 60), color=(255, 255, 255))
 	overlay.draw("Circle", vector=Vector(150, 150, 0, 0), color=(255, 0, 0), thickness=0, radius=20)
 	overlay.draw("Line", vector=Vector(100, 100, 600, 600), color=(255, 255, 255), thickness=5)
-	overlay.draw("Text", vector=Vector(overlay.targetRect.w / 2 - xOffset, overlay.targetRect.h / 2 - yOffset, 0, 0), color=(255, 255, 255), text="+", fontObject=font)
-	if keyboard.is_pressed('['):
-		xOffset -= 1
-	elif keyboard.is_pressed(']'):
-		xOffset += 1
-	elif keyboard.is_pressed('-'):
-		yOffset -= 1
-	elif keyboard.is_pressed('='):
-		yOffset += 1
-	#overlay.draw("fillRect", vector=Vector(overlay.targetRect.w / 2 - xOffset, overlay.targetRect.h / 2 - yOffset, 20, 20), color=(255, 255, 255))
-	#overlay.draw("Circle", vector=Vector(overlay.targetRect.w / 2 - xOffset, overlay.targetRect.h / 2 - yOffset, 0, 0), color=(255, 255, 255, 255), thickness=1, radius=5)
+	overlay.draw("Text", vector=Vector(overlay.targetRect.w / 2, overlay.targetRect.h / 2, 0, 0), color=(255, 255, 255), text="+", fontObject=font)
 	overlay.handle()
